@@ -21,7 +21,10 @@ from MindfulNET import AutoencoderHypersearch as ah, CNNHypersearch as ch
 class MINDFUL_NET():
     def __init__(self, dsConfig, autoencoderA=None, autoencoderN=None, model=None):
         self.ds = dsConfig
-        fileOutput = self.ds.get('pathModels') + 'result' + self.ds.get('testPath') + '.txt'
+        #print(type(self.ds))
+        print(self.ds.get('pathModels'))
+
+        fileOutput = self.ds.get('pathModels') + 'result' + self.ds.get('testName') + '.txt'
         self.file = open(fileOutput, 'w')
         self.file.write('Result time for: \n' )
         self.file.write('\n')
@@ -105,14 +108,13 @@ class MINDFUL_NET():
         if (self.autoencoderN ==None):
 
             self.autoencoderN, best_time, encoder = ah.hypersearch(train_XN, train_YN, train_XN, train_YN,
-                                                             self.pathModels + 'autoencoderNormal.h5',self.pathModels+self.ds.get('testPath')+'Normal')
+                                                             self.pathModels + 'autoencoderNormal.h5',self.pathModels+self.ds.get('testName')+'Normal')
 
             self.file.write("Time Training Autoencoder Normal: %s" % best_time)
             self.file.write('\n')
 
         else:
             print("Load autoencoder Normal from disk")
-            #self.autoencoderN = load_model(self.pathModels + 'autoencoderNormal.h5')
             self.autoencoderN.summary()
 
 
@@ -131,31 +133,27 @@ class MINDFUL_NET():
 
         else:
             print("Load autoencoder Attacks from disk")
-            #self.autoencoderA = load_model(self.pathModels + 'autoencoderAttacks.h5')
             self.autoencoderA.summary()
 
         train_REA = self.autoencoderA.predict(X)
-        #test_REA = self.autoencoderA.predict(test_X)
 
 
 
         train_X_image, input_Shape = self.createImage(X, train_RE, train_REA)
-        #test_X_image, input_shape = self.createImage(test_X, test_RE, test_REA)
 
 
 
         if (self.model==None):
             self.model, best_time,  = ch.hypersearch(train_X_image, Y, train_X_image, Y,
-                                                              self.pathModels + 'MINDFUL.h5', self.pathModels+ self.ds.get('testPath') )
+                                                              self.pathModels + 'MINDFUL.h5', self.pathModels+ self.ds.get('testName') )
             self.file.write("Time Training CNN: %s" % best_time)
             self.file.write('\n')
 
         else:
             print("Load softmax from disk")
-            #self.model = load_model(self.pathModels + 'MINDFUL.h5')
             self.model.summary()
         
-        return self.model
+        return self.autoencoderA, self.autoencoderN, self.model
 
         
 
