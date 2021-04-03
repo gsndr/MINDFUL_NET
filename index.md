@@ -6,7 +6,7 @@ class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, config, autoencoderA=None, autoenc
 
 **MINDFUL** is an Deep Learning model that performs a binary classification by combining autoencoders and 1D Convolutional Neural Network. 
 
-![MINDFUL](https://github.com/gsndr/MINDFUL_NET/blob/master/MINDFUL.png)
+![MINDFUL](https://raw.githubusercontent.com/gsndr/MINDFUL_NET/master/MINDFUL.png)
 
 ### Markdown
 
