@@ -50,3 +50,22 @@ Packages need are:
 * [Numpy 1.15.4](https://www.numpy.org/)
 * [Scikit-learn](https://scikit-learn.org/stable/)
 
+
+## How to use
+Here is a simple example of how to make a MINDFUL object:
+
+## Configuration file
+MINDFUL needs as input a path to the configuration file. 
+A sample of the configuration file is stored in __MINDFUL.conf__  file 
+
+
+```python
+    N_CLASSES = 2
+    PREPROCESSING1 = 0  #if set to 1 code execute preprocessing phase on original date
+    LOAD_AUTOENCODER_ADV = 1 #if 1 the autoencoder for attacks items  is loaded from models folder
+    LOAD_AUTOENCODER_NORMAL = 1 #if 1 the autoencoder for normal items  is loaded from models folder
+    LOAD_CNN = 1  #if 1 the classifier is loaded from models folder
+    VALIDATION_SPLIT #the percentage of validation set used to train models
+```
+
+## Demo Code
