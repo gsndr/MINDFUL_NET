@@ -12,10 +12,11 @@
 class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, autoencoderA=None,autoencoderN=None,model=None)
 ```
 ### Parameters:
-* dsConfig: a dictionary of parameters ds={'pathModels':'models/CICIDS2017/', 'testName' : 'CICIDS2017', 'label':'Classification'}
-* autoencoderA: path of learned autoencoder fo class 0
-* autoencoderA: path of learned autoencoder fo class 1
-* model: path of learned autoencoder fo class 1
+* **dsConfig**: a dictionary of parameters ds={'pathModels':'models/CICIDS2017/', 'testName' : 'CICIDS2017'} that indicate the path and the name of saved files and models
+* **autoencoderA**: path of learned autoencoder fo class with label 0
+* **autoencoderA**: path of learned autoencoder fo class with label 1
+* **model**: path of learned 1DCNN
+
 
 The default path of Deep Learning models is None. If the path of a model is setted the framework load the learned model from path otherwise the framework find the better model by performing a
 
@@ -25,15 +26,36 @@ fit(X, y)
 ```
 Fit the model according to the given training data
 
+### Parameters:
+* **X**: array of shape (n_samples, n_features)
+* **Y**:  target array of shape (n_samples,) 
+
+### Returns:
+ * **autoencoderA**: learned autoencoder for class with label 0
+ * **autoencoderN**: learned autoencoder for class with label 1
+ * **autoencoderN**: learned 1DCNN
+ 
+
+
 ```
 predict(X)
 ```
-Predict class labels for samples in X.
+### Parameters:
+* **X**: array of shape (n_samples, n_features)
+
+### Returns:
+ * **y_pred**: array-like of predicted values shape (n_samples,)
 
 ```
 predict_proba(X)
 ```
 Predict probabilities for samples in X.
+
+### Parameters:
+* **X**: array of shape (n_samples, n_features)
+
+### Returns:
+ * **y_prob**: array of the class probabilities of the input samples of  shape (n_samples, n_classes) 
 
 
 ## Code requirements
@@ -53,19 +75,6 @@ Packages need are:
 ## How to use
 Here is a simple example of how to make a MINDFUL object:
 
-## Configuration file
-MINDFUL needs as input a path to the configuration file. 
-A sample of the configuration file is stored in __MINDFUL.conf__  file 
-
-
-```python
-    N_CLASSES = 2
-    PREPROCESSING1 = 0  #if set to 1 code execute preprocessing phase on original date
-    LOAD_AUTOENCODER_ADV = 1 #if 1 the autoencoder for attacks items  is loaded from models folder
-    LOAD_AUTOENCODER_NORMAL = 1 #if 1 the autoencoder for normal items  is loaded from models folder
-    LOAD_CNN = 1  #if 1 the classifier is loaded from models folder
-    VALIDATION_SPLIT #the percentage of validation set used to train models
-```
 
 ## Demo Code
 
