@@ -38,3 +38,15 @@ predict_proba(X)
 ```
 Predict probabilities for samples in X.
 
+
+## Code requirements
+
+The code relies on the following **python3.6+** libs.
+
+Packages need are:
+* [Tensorflow 1.13](https://www.tensorflow.org/) 
+* [Keras 2.3](https://github.com/keras-team/keras) 
+* [Pandas 0.23.4](https://pandas.pydata.org/)
+* [Numpy 1.15.4](https://www.numpy.org/)
+* [Scikit-learn](https://scikit-learn.org/stable/)
+
