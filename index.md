@@ -1,41 +1,40 @@
 ## MultI-chanNel Deep FeatUre Learning for intrusion detection (MINDFUL)
 
-```
-class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, config, autoencoderA=None, autoencoderN=None, model=None)
-```
-
 **MINDFUL** is an Deep Learning model that performs a binary classification by combining autoencoders and 1D Convolutional Neural Network. 
 
 ![MINDFUL](https://raw.githubusercontent.com/gsndr/MINDFUL_NET/master/MINDFUL.png)
 
-### Markdown
+[Read more](https://ieeexplore.ieee.org/document/9036935) 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Please cite our work if you find it useful for your research and work.
+```
+  @ARTICLE{9036935, 
+  author={G. {Andresini} and A. {Appice} and N. D. {Mauro} and C. {Loglisci} and D. {Malerba}}, 
+  journal={IEEE Access}, 
+  title={Multi-Channel Deep Feature Learning for Intrusion Detection}, 
+  year={2020}, 
+  volume={8}, 
+  number={}, 
+  pages={53346-53359},}
+```
 
-```markdown
-Syntax highlighted code block
+```
+class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, config, autoencoderA=None,autoencoderN=None,model=None)
+```
 
-# Header 1
-## Header 2
-### Header 3
+## Methods
+```
+fit(X, y)
+```
+Fit the model according to the given training data
 
-- Bulleted
-- List
+```
+predict(X)
+```
+Predict class labels for samples in X.
 
-1. Numbered
-2. List
+```
+predict_proba(X)
+```
+Predict probabilities for samples in X.
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gsndr/MINDFUL_NET/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
