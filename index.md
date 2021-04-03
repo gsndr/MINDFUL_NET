@@ -40,6 +40,8 @@ Fit the model according to the given training data
 ```
 predict(X)
 ```
+Predict class for X.
+
 ### Parameters:
 * **X**: array of shape (n_samples, n_features)
 
