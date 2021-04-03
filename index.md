@@ -6,21 +6,18 @@
 
 [Read more: Multi-Channel Deep Feature Learning for Intrusion Detection](https://ieeexplore.ieee.org/document/9036935) 
 
-Please cite our work if you find it useful for your research and work.
-```
-  @ARTICLE{9036935, 
-  author={G. {Andresini} and A. {Appice} and N. D. {Mauro} and C. {Loglisci} and D. {Malerba}}, 
-  journal={IEEE Access}, 
-  title={Multi-Channel Deep Feature Learning for Intrusion Detection}, 
-  year={2020}, 
-  volume={8}, 
-  number={}, 
-  pages={53346-53359},}
-```
+
 
 ```
-class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, config, autoencoderA=None,autoencoderN=None,model=None)
+class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, autoencoderA=None,autoencoderN=None,model=None)
 ```
+### Parameters:
+* dsConfig: a dictionary of parameters ds={'pathModels':'models/CICIDS2017/', 'testName' : 'CICIDS2017', 'label':'Classification'}
+* autoencoderA: path of learned autoencoder fo class 0
+* autoencoderA: path of learned autoencoder fo class 1
+* model: path of learned autoencoder fo class 1
+
+The default path of Deep Learning models is None. If the path of a model is setted the framework load the learned model from path otherwise the framework find the better model by performing a
 
 ## Methods
 ```
@@ -44,11 +41,13 @@ Predict probabilities for samples in X.
 The code relies on the following **python3.6+** libs.
 
 Packages need are:
-* [Tensorflow 1.13](https://www.tensorflow.org/) 
+* [Tensorflow](https://www.tensorflow.org/) 
 * [Keras 2.3](https://github.com/keras-team/keras) 
 * [Pandas 0.23.4](https://pandas.pydata.org/)
 * [Numpy 1.15.4](https://www.numpy.org/)
 * [Scikit-learn](https://scikit-learn.org/stable/)
+* [Hyperopt](http://hyperopt.github.io/hyperopt/)
+* [Hyperas](https://github.com/maxpumperla/hyperas)
 
 
 ## How to use
@@ -69,3 +68,16 @@ A sample of the configuration file is stored in __MINDFUL.conf__  file
 ```
 
 ## Demo Code
+
+## Cite
+Please cite our work if you find it useful for your research and work.
+```
+  @ARTICLE{9036935, 
+  author={G. {Andresini} and A. {Appice} and N. D. {Mauro} and C. {Loglisci} and D. {Malerba}}, 
+  journal={IEEE Access}, 
+  title={Multi-Channel Deep Feature Learning for Intrusion Detection}, 
+  year={2020}, 
+  volume={8}, 
+  number={}, 
+  pages={53346-53359},}
+```
