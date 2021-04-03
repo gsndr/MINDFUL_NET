@@ -4,7 +4,7 @@
 
 ![MINDFUL](https://raw.githubusercontent.com/gsndr/MINDFUL_NET/master/MINDFUL.png)
 
-[Read more](https://ieeexplore.ieee.org/document/9036935) 
+[Read more: Multi-Channel Deep Feature Learning for Intrusion Detection](https://ieeexplore.ieee.org/document/9036935) 
 
 Please cite our work if you find it useful for your research and work.
 ```
