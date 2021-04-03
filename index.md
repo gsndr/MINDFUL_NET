@@ -1,6 +1,6 @@
 ## MultI-chanNel Deep FeatUre Learning for intrusion detection (MINDFUL)
 
-```markdown
+```
 class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, config, autoencoderA=None, autoencoderN=None, model=None)
 ```
 
