@@ -19,8 +19,7 @@ from MindfulNET import AutoencoderHypersearch as ah, CNNHypersearch as ch
 
 
 class MINDFUL_NET():
-    def __init__(self, dsConfig, config, autoencoderA=None, autoencoderN=None, model=None):
-        self.config = config
+    def __init__(self, dsConfig, autoencoderA=None, autoencoderN=None, model=None):
         self.ds = dsConfig
         fileOutput = self.ds.get('pathModels') + 'result' + self.ds.get('testPath') + '.txt'
         self.file = open(fileOutput, 'w')
@@ -83,8 +82,6 @@ class MINDFUL_NET():
     def fit(self, X, Y):
 
         print('MINDFUL EXECUTION')
-        dsConf = self.ds
-        configuration = self.config
         pd.set_option('display.expand_frame_repr', False)
 
         index_normal = np.where(Y == 1)
