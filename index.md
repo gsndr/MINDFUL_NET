@@ -6,6 +6,7 @@
 
 [Read more: Multi-Channel Deep Feature Learning for Intrusion Detection](https://ieeexplore.ieee.org/document/9036935) 
 
+This repo contains the classifier only. For the full network intrusion detection system from the paper and all experiments, please see [https://github.com/gsndr/MINDFUL](https://github.com/gsndr/MINDFUL).
 
 
 ```
