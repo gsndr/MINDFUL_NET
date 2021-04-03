@@ -79,6 +79,8 @@ Here is a simple example of how to make a MINDFUL object:
 
 
 ## Demo Code
+As a quick start, a demo script is provided in [example.py](https://github.com/gsndr/MINDFUL_NET/blob/master/example.py). You can either run it directly or enter the following into your python console
+``` python3 example.py -d CICIDS2017 -i MINDFUL.conf ```
 
 ## Cite
 Please cite our work if you find it useful for your research and work.
