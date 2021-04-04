@@ -37,40 +37,34 @@ def main():
     dataset = args.dataset_name
     if args.input_file != None:
         config = configparser.ConfigParser()
-        config.read('MINDFUL.conf')
-        dsConf = config[dataset]
+        config.read(args.input_file)
     else:
         print('Error: insert a path of the configuration file')
 
 
 
-    config = configparser.ConfigParser()
-    config.read('MINDFUL.conf')
-
     dsConf = config[dataset]
-    ds={'pathModels':'models/CICIDS2017/', 'testName' : 'CICIDS2017'}
-
     pathModels=dsConf.get('pathModels')
-    clf=MINDFUL_NET(dsConf,autoencoderA=pathModels+'autoencoderAttacks.h5', autoencoderN=pathModels+'autoencoderNormal.h5')
-    pathDs=dsConf.get('pathDatasetNumeric')
-    train=pd.read_csv(pathDs+dsConf.get('pathDataset')+'Numeric.csv')
+    pathDs = dsConf.get('pathDataset')
+    train = pd.read_csv(pathDs+'Train_OneClsNumeric.csv')
     print(train.head(8))
-    cls=dsConf.get('label')
-    X,Y = Utils.getXY(train, cls)
-    print(Y.shape)
+    cls = dsConf.get('label')
+    X, Y = Utils.getXY(train, cls)
 
+    #MINDFUL
+    clf=MINDFUL_NET(dsConf,autoencoderA=pathModels+'autoencoderAttacks.h5', autoencoderN=pathModels+'autoencoderNormal.h5')
     clf.fit(X,Y)
 
     #Test prediction
-    test=pd.read_csv(pathDs+dsConf.get('pathTest')+'Numeric.csv')
+    test=pd.read_csv(pathDs+'Test_OneClsNumeric.csv')
     X_test, Y_test= Utils.getXY(test, cls)
+
     Y_pred=clf.predict(X_test)
 
 
     cm = confusion_matrix(Y_test, Y_pred)
     print('Prediction Test')
     print(cm)
-
     # create pandas for results
     columns = ['TP', 'FN', 'FP', 'TN', 'OA', 'AA', 'P', 'R', 'F1', 'FAR(FPR)', 'TPR']
     results = pd.DataFrame(columns=columns)
@@ -81,7 +75,7 @@ def main():
 
     results = results.append(dfResults, ignore_index=True)
 
-    results.to_csv('results/' + dsConf.get('testpath') + '_results.csv', index=False)
+    results.to_csv('AAGM_results.csv', index=False)
     
 
 
