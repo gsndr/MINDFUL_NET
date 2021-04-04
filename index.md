@@ -77,7 +77,8 @@ Packages need are:
 
 ## How to use
 Here is a simple example of how to make a MINDFUL object:
-``` sys.path.insert(1, 'MindfulNET')
+```
+    sys.path.insert(1, 'MindfulNET')
     from MindfulNET.MINDFUL import MINDFUL_NET
     
     dsConf = {'pathModels': 'models/AAGM17/', 'testName': 'AAGM17'}
@@ -88,7 +89,7 @@ Here is a simple example of how to make a MINDFUL object:
     cm = confusion_matrix(Y_test, Y_pred)
     print('Prediction Test')
     print(cm)
-    ```
+ ```
 If you pass the path to the learned model the code kip the pearning phase of the model (e.g. in the sample above the autoencoder on class 0.
 
 ## Demo Code
