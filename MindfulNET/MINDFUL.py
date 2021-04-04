@@ -108,7 +108,7 @@ class MINDFUL_NET():
         if (self.autoencoderN ==None):
 
             self.autoencoderN, best_time, encoder = ah.hypersearch(train_XN, train_YN, train_XN, train_YN,
-                                                             self.pathModels + 'autoencoderNormal.h5',self.pathModels+self.ds.get('testName')+'Normal')
+                                                             self.pathModels + 'autoencoderNormal.h5',self.pathModels+'Normal')
 
             self.file.write("Time Training Autoencoder Normal: %s" % best_time)
             self.file.write('\n')
@@ -125,8 +125,8 @@ class MINDFUL_NET():
 
         if (self.autoencoderA ==None):
 
-            self.autoencoderA, best_time, encoder = ah.hypersearch(train_XA, train_YA, train_XA, train_XA,
-                                                              self.pathModels + 'autoencoderAttacks.h5', self.pathModels+self.ds.get('testPath')+'Attack')
+            self.autoencoderA, best_time, encoder = ah.hypersearch(train_XA, train_YA, train_XA, train_YA,
+                                                              self.pathModels + 'autoencoderAttacks.h5', self.pathModels+'Attack')
             self.file.write("Time Training Autoencoder Attacks: %s" % best_time)
             self.file.write('\n')
 

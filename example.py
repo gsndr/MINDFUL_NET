@@ -25,7 +25,7 @@ import argparse
 
 
 def main():
-    # MIDFUL.py -i MINDFUL.conf -d CICIDS2017Stream
+    # MIDFUL.py -i MINDFUL.conf -d AAGM17
     parser = argparse.ArgumentParser()
     input_group = parser.add_mutually_exclusive_group(required=True)
     input_group.add_argument('-i', '--input_file', action='store', dest='input_file',
@@ -52,7 +52,7 @@ def main():
     X, Y = Utils.getXY(train, cls)
 
     #MINDFUL
-    clf=MINDFUL_NET(dsConf,autoencoderA=pathModels+'autoencoderAttacks.h5', autoencoderN=pathModels+'autoencoderNormal.h5')
+    clf=MINDFUL_NET(dsConf)
     clf.fit(X,Y)
 
     #Test prediction
