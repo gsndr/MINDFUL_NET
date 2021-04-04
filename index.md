@@ -96,7 +96,7 @@ If you pass the path to the learned model the code kip the pearning phase of the
 As a quick start, a demo script is provided in [example.py](https://github.com/gsndr/MINDFUL_NET/blob/master/example.py). You can either run it directly or enter the following into your python console
 ``` python3 example.py -d AAGM -i MINDFUL.conf ```
 
-In the file [Example_Prediction.py](https://github.com/gsndr/MINDFUL_NET/blob/master/Example_prediction.py) a sample of MINDFUL used only for prediction. You can pass on MINDFUL class the path of the models to skip the learning phase. 
+In the file [Example_Prediction.py](https://github.com/gsndr/MINDFUL_NET/blob/master/Example_Prediction.py) a sample of MINDFUL used only for prediction. You can pass on MINDFUL class the path of the models to skip the learning phase. 
 
 
 ## Cite
