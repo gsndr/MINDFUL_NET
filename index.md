@@ -15,7 +15,7 @@ class MindfulNET.MINDFUL.MIDFUL_NET(dsConfig, autoencoderA=None,autoencoderN=Non
 ### Parameters:
 * **dsConfig**: a dictionary of parameters dsConf = {'pathModels': 'models/AAGM17/', 'testName': 'AAGM17'} that indicate the path and the name of saved files and models
 * **autoencoderA**: path of learned autoencoder fo class with label 0
-* **autoencoderA**: path of learned autoencoder fo class with label 1
+* **autoencoderN**: path of learned autoencoder fo class with label 1
 * **model**: path of learned 1DCNN
 
 
